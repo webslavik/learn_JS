@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Work 1</title>
+</head>
+<body>
+
+
+  <script>
+
+    // Задание 1
+    // -------------------------------------------
+    // function myMath(a, b, sign) {
+    //
+    //
+    //   // проверка на кол-во полученных аргументов
+    //   if(arguments.length != 3) {
+    //     return alert('Введите три аргумента');
+    //   }
+    //
+    //   var res = 0;
+    //
+    //   a = parseInt(a);
+    //   b = parseInt(b);
+    //
+    //   // проверка a, b число или нет
+    //   if(typeof(a) != 'number' || typeof(b) != 'number') {
+    //     return alert('Аргумент должен быть числом');
+    //   }
+    //
+    //   // операции с аргументами
+    //   switch(sign) {
+    //
+    //     case '+':
+    //       res = a + b;
+    //       break;
+    //
+    //     case '-':
+    //       res = a - b;
+    //       break;
+    //
+    //     case '*':
+    //       res = a * b;
+    //       break;
+    //
+    //     case '/':
+    //       if(b == 0) {
+    //         return alert('На ноль делить нельзя!');
+    //       }
+    //
+    //       res = a / b;
+    //       break;
+    //
+    //     default:
+    //       alert('Такой операции нет!');
+    //
+    //   }
+    //
+    //   if(isNaN(res) == true || res == 'infinity') {
+    //     return alert('Ваша переменная NaN');
+    //   }
+    //
+    //   document.write('Ваш ответ: ' + a + ' ' + sign + ' ' + b + ' = ' + res);
+    //
+    // }
+    //
+    //
+    // var val_1 = prompt('Введите первое число: ', '');
+    // var val_2 = prompt('Введите второе число: ', '');
+    // var operation = prompt('Введите арифметическую операцию: ', '');
+    //
+    // myMath(val_1, val_2, operation);
+
+
+
+
+    // Задание 2: передача массивов
+    // -------------------------------------------
+    // function myMath(a, b, sign) {
+    //
+    //   // проверка на кол-во полученных аргументов
+    //   if(arguments.length != 3) {
+    //     return alert('Введите три аргумента');
+    //   }
+    //
+    //   // проверка массив или нет
+    //   if(a instanceof Array == false || b instanceof Array == false) {
+    //     return alert('Аргумент должен быть числом');
+    //   }
+    //
+    //   var resArray = [];
+    //   var length = 0;
+    //   var errorDiv = '';
+    //
+    //   if(a.length >= b.length) {
+    //     length = a.length;
+    //   } else {
+    //     length = b.length;
+    //   }
+    //
+    //   // вычисления
+    //   for(var i = 0; i < length; i++) {
+    //
+    //     switch(sign) {
+    //       case '+': resArray[i] = a[i] + b[i]; break;
+    //       case '-': resArray[i] = a[i] - b[i]; break;
+    //       case '*': resArray[i] = a[i] * b[i]; break;
+    //       case '/':
+    //         if(b[i] == 0) return alert('На ноль делить нельзя');
+    //         resArray[i] = a[i] / b[i];
+    //         break;
+    //       default: alert('Такой операции нет');
+    //     }
+    //
+    //   }
+    //
+    //   // выводим результат
+    //   for(var j = 0; j < resArray.length; j++) {
+    //
+    //     if(isNaN(resArray[j])) {
+    //       document.write('Результат вычислений ' + j + '-х индексов массивов: NaN <br>');
+    //     } else {
+    //       document.write('Результат вычислений ' + j + '-х индексов массивов: ' + resArray[j] + '<br>');
+    //     }
+    //
+    //   }
+    //
+    //   console.log(resArray.join(', '));
+    //
+    // }
+    //
+    // var arr_1 = [5, 13, 100, 12];
+    // var arr_2 = [2, 0, 10];
+    //
+    // myMath(arr_1, arr_2, '/');
+
+
+
+    // Задание 3: передача объектов
+    // -------------------------------------------
+    // function myMath(a, b, sign) {
+    //
+    //   // проверка на кол-во полученных аргументов
+    //   if(arguments.length != 3) {
+    //     return alert('Введите три аргумента');
+    //   }
+    //
+    //   // проверка массив или нет
+    //   if(a instanceof Object == false || b instanceof Object == false) {
+    //     return alert('Аргумент должен быть числом');
+    //   }
+    //
+    //   var resObj = {};
+    //
+    //   // вычисления
+    //   switch(sign) {
+    //     case '+': resObj.res = a['a'] + b['b']; break;
+    //     case '-': resObj.res = a['a'] - b['b']; break;
+    //     case '*': resObj.res = a['a'] * b['b']; break;
+    //     case '/':
+    //       if(b['b'] == 0) return alert('На ноль делить нельзя');
+    //       resObj.res = a['a'] / b['b'];
+    //       break;
+    //     default: alert('Такой операции нет');
+    //   }
+    //
+    //   // выводим результат
+    //   for(var i in resObj) {
+    //
+    //     if(isNaN(resObj[i])) {
+    //       document.write('Результат вычислений свойств объектов: Ваше число NaN <br>');
+    //     } else {
+    //       document.write('Результат вычислений свойств объектов: ' + resObj[i] + '<br>');
+    //     }
+    //
+    //   }
+    //
+    // }
+    //
+    // var arr_1 = {a: 10};
+    // var arr_2 = {b: 'bu'};
+    //
+    // myMath(arr_1, arr_2, '/');
+
+
+    function myMath(a, b, sign) {
+
+      if(typeof(a) == 'number' && typeof(b) == 'number') {
+        var res = 0;
+        switch(sign) {
+          case '+': res = a + b; break;
+          case '-': res = a - b; break;
+          case '*': res = a * b; break;
+          case '/':
+            if(b == 0) return alert('На ноль делить нельзя!');
+            res = a / b; break
+          default: return alert('Знак неправильный!Такой операции нет.');
+        }
+
+        document.write('Результат: ' + a + ' ' + sign + ' ' + b + ' = ' + res + '<br>');
+        console.log('in Number');
+
+      } else if(a instanceof Array && b instanceof Array) {
+
+        var resArray = [];
+        var length = 0;
+
+        if(a.length >= b.length) length = a.length;
+        else length = b.length;
+
+        for(var i = 0; i < length; i++) {
+          switch(sign) {
+            case '+': resArray[i] = a[i] + b[i]; break;
+            case '-': resArray[i] = a[i] - b[i]; break;
+            case '*': resArray[i] = a[i] * b[i]; break;
+            case '/':
+              if(b[i] == 0) return alert('На ноль делить нельзя!');
+              resArray[i] = a[i] / b[i]; break;
+            default: return alert('Знак неправильный!Такой операции нет.');
+          }
+        }
+
+        for(var j = 0; j < resArray.length; j++) {
+          if(isNaN(resArray[j])) {
+            document.write('Результат вычислений ' + j + '-х индексов массивов: NaN <br>');
+          } else {
+            document.write('Результат вычислений ' + j + '-х индексов массивов: ' + resArray[j] + '<br>');
+          }
+        }
+
+        console.log('in Array');
+
+      } else if(a instanceof Object && b instanceof Object) {
+
+        var resObj = {};
+
+        switch(sign) {
+          case "+": resObj.res = a['a'] + b['b']; break;
+          case "-": resObj.res = a['a'] - b['b']; break;
+          case "*": resObj.res = a['a'] * b['b']; break;
+          case "/":
+            if(b['b'] == 0) return alert('На ноль делить нельзя!');
+            resObj.res = a['a'] / b['b']; break;
+        }
+
+        for(var k in resObj) {
+          if(isNaN(resObj[k])) {
+            document.write('Результат вычислений свойств объектов: NaN <br>');
+          } else {
+            document.write('Результат вычислений свойств объектов: ' + resObj[k] + '<br>');
+          }
+        }
+
+        console.log('in Object');
+      }
+
+    }
+
+
+
+    var arr_1 = [1, 2, 4];
+    var arr_2 = [1, 2, 3];
+
+    var obj_1 = {a: 10};
+    var obj_2 = {b: 0};
+
+    // myMath(10, 0, '/');
+    myMath(arr_1, arr_2, '+');
+    // myMath(obj_1, obj_2, '/');
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>
