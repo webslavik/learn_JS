@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Practice-2</title>
+</head>
+<body>
+
+
+  <script>
+
+    // var MathFramework = {
+
+
+      // Задание 1
+      // ------------------------------------------------
+      // operation: function (a, b, sign) {
+      //
+      //   if(typeof(a) == 'number' && typeof(b) == 'number') {
+      //     switch(sign) {
+      //       case '+': this.result = a + b; break;
+      //       case '-': this.result = a - b; break;
+      //       case '*': this.result = a * b; break;
+      //       case '/':
+      //         if(b == 0) return this.result 'На ноль делить нельзя!';
+      //         this.result = a / b; break
+      //       default: return this.result 'Знак неправильный!Такой операции нет.';
+      //     }
+      //
+      //     // document.write('Результат: ' + a + ' ' + sign + ' ' + b + ' = ' + res + '<br>');
+      //     // this.result = document.write('Результат: ' + a + ' ' + sign + ' ' + b + ' = ' + res + '<br>');
+      //     this.result = res;
+      //     console.log('in Number');
+
+        // } else if(a instanceof Array && b instanceof Array) {
+        //
+        //   var resArray = [];
+        //   var length = 0;
+        //
+        //   if(a.length >= b.length) length = a.length;
+        //   else length = b.length;
+        //
+        //   for(var i = 0; i < length; i++) {
+        //     switch(sign) {
+        //       case '+': resArray[i] = a[i] + b[i]; break;
+        //       case '-': resArray[i] = a[i] - b[i]; break;
+        //       case '*': resArray[i] = a[i] * b[i]; break;
+        //       case '/':
+        //         if(b[i] == 0) return alert('На ноль делить нельзя!');
+        //         resArray[i] = a[i] / b[i]; break;
+        //       default: return alert('Знак неправильный!Такой операции нет.');
+        //     }
+        //   }
+        //
+        //   for(var j = 0; j < resArray.length; j++) {
+        //     if(isNaN(resArray[j])) {
+        //       document.write('Результат вычислений ' + j + '-х индексов массивов: NaN <br>');
+        //     } else {
+        //       document.write('Результат вычислений ' + j + '-х индексов массивов: ' + resArray[j] + '<br>');
+        //     }
+        //   }
+        //
+        //   console.log('in Array');
+        //
+        // } else if(a instanceof Object && b instanceof Object) {
+        //
+        //   var resObj = {};
+        //
+        //   switch(sign) {
+        //     case "+": resObj.res = a['a'] + b['b']; break;
+        //     case "-": resObj.res = a['a'] - b['b']; break;
+        //     case "*": resObj.res = a['a'] * b['b']; break;
+        //     case "/":
+        //       if(b['b'] == 0) return alert('На ноль делить нельзя!');
+        //       resObj.res = a['a'] / b['b']; break;
+        //   }
+        //
+        //   for(var k in resObj) {
+        //     if(isNaN(resObj[k])) {
+        //       document.write('Результат вычислений свойств объектов: NaN <br>');
+        //     } else {
+        //       document.write('Результат вычислений свойств объектов: ' + resObj[k] + '<br>');
+        //     }
+        //   }
+        //
+        //   console.log('in Object');
+        // }
+    //
+    //   },
+    //
+    //
+    //   // result: 'data',
+    //
+    //   // Задание 2
+    //   // ------------------------------------------------
+    //
+    //
+    // }
+
+    var MathFramework = {
+
+      math: function(a, b, sign) {
+
+        if(typeof(a) == 'number' && typeof(b) == 'number') {
+            switch(sign) {
+              case '+': this.result = a + b; break;
+              case '-': this.result = a - b; break;
+              case '*': this.result = a * b; break;
+              case '/':
+                if(b == 0) return this.result = 'На ноль делить нельзя!';
+                this.result = a / b; break
+              default: return this.result = 'Знак неправильный! Такой операции нет.';
+            }
+
+        } else if(a instanceof Array && b instanceof Array) {
+
+          var resArray = [];
+          var length = 0;
+
+          if(a.length >= b.length) length = a.length;
+          else length = b.length;
+
+          for(var i = 0; i < length; i++) {
+            switch(sign) {
+              case '+': resArray[i] = a[i] + b[i]; break;
+              case '-': resArray[i] = a[i] - b[i]; break;
+              case '*': resArray[i] = a[i] * b[i]; break;
+              case '/':
+                if(b[i] == 0) return this.result = 'На ноль делить нельзя!';
+                resArray[i] = a[i] / b[i]; break;
+              default: return this.result = 'Знак неправильный! Такой операции нет.';
+            }
+
+          }
+
+          this.result = resArray;
+
+        } else if(a instanceof Object && b instanceof Object) {
+
+          var resObj = {};
+
+          switch(sign) {
+            case "+": resObj.res = a['a'] + b['b']; break;
+            case "-": resObj.res = a['a'] - b['b']; break;
+            case "*": resObj.res = a['a'] * b['b']; break;
+            case "/":
+              if(b['b'] == 0) return alert('На ноль делить нельзя!');
+              resObj.res = a['a'] / b['b']; break;
+          }
+
+          this.result = resObj;
+
+        }
+
+
+      }
+    }
+
+
+    // MathFramework.a = 10;
+    // MathFramework.b = 0;
+
+    // MathFramework.a = [5, 10, 7];
+    // MathFramework.b = [6, 2, 3];
+
+    MathFramework.a = {a: 10};
+    MathFramework.b = {b: 5};
+
+
+
+
+
+    MathFramework.math(MathFramework.a, MathFramework.b, '+');
+    alert(MathFramework.result);
+
+  </script>
+
+</body>
+</html>

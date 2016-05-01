@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quest</title>
+</head>
+<body>
+
+
+  <script>
+
+    document.write('Приветствую вас в Мире Приключений 18+! <br>');
+
+    var age = prompt('Сколько вам лет?', '');
+
+    if(age >= 18) {
+      startGame();
+    } else {
+      document.write('Слишком молоды!!! Это опасное приключение. <br>');
+    }
+
+    function startGame() {
+
+      document.write('<br>');
+      document.write('Начнем нашу игру! <br>');
+
+      document.write('Вы находитесь в камере. В углу лежат останки заключенного. <br>');
+      var step_1 = prompt('Подойти посмотреть?', 'да/нет');
+      if(step_1 == 'нет') {
+        document.write('Вы не смогли выбраться из камеры и остались в ней навсегда <br>');
+        document.write('Конец игры.<br>');
+
+      }
+
+      document.write('<br>');
+      document.write('Осмотрев своего нового друга, Вы нашли старое тупое лезвие<br>');
+      document.write('Возможно это поможет вам выбраться отсюда!<br>');
+      document.write('<br>');
+      var step_2 = prompt('Попробовать открыть замок от камеры?', 'да/нет');
+      if(step_2 == 'нет') {
+        document.write('Наверное лучше просто подождать. Может быть кто то придет за вами.<br>');
+        document.write('Конец игры.<br>');
+
+
+      }
+
+      document.write('Вы вышли из камеры и увидели чудовище. Оно бежит на вас!<br>');
+
+      var step_3 = prompt('Пригнуться', 'да/нет');
+      if(step_3 == 'нет') {
+        var step_3_1 = prompt('Cхватить палку рядом с дверью и ударить чудовище?', 'да/нет');
+
+        if(step_3_1 = 'да') {
+          document.write('<br>');
+          document.write('Чудовище не ожидало такого натиска и пало от вашей руки!<br>');
+        }
+
+      } else if(step_3 == 'да') {
+        document.write('<br>');
+        document.write('Вы проскочили под чудовищем и кинулись бежать по коридору.<br>');
+      }
+
+
+    }
+
+
+
+  </script>
+
+</body>
+</html>
