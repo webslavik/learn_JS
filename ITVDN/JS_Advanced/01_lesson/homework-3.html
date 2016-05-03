@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 1 - homework-3</title>
+</head>
+<body>
+
+
+  <script>
+
+    function Human(name, age, eyeColor) {
+      this.name = name;
+      this.age = age;
+      this.eyeColor = eyeColor;
+      // this.nationality;
+
+    }
+
+    // Я сделал отдельный метод 'message', но было бы лучше переопределить toString().
+    // Human.prototype.message = function() {
+    //   document.write('Hi! I am ' + this.name + ', ' + this.age + ' years old, ' + this.nationality + '. I have ' + this.eyeColor + ' eyes. <br>');
+    // }
+
+    Human.prototype.toString = function() {
+      document.write('Hi! I am ' + this.name + ', ' + this.age + ' years old, ' + this.nationality + '. I have ' + this.eyeColor + ' eyes.<br>');
+    }
+
+    Human.nationality = function(whereFrom) {
+      if(whereFrom == 'europe') return 'Europian';
+      if(whereFrom == 'america') return 'American';
+      if(whereFrom == 'africa') return 'African';
+      return 'undefined';
+    }
+
+
+    // Human.welcome = function() {
+    //     // document.write('Nice to meet you, ' + this.name + '<br>');
+    //     if(this.age < 16) document.write('You are so small. <br> <br>');
+    //     if(this.age >= 16) document.write('You are so big. <br> <br>');
+    //
+    // }
+
+    var human_1 = new Human('Greg', 23, 'light blue');
+    var human_2 = new Human('Jodie', 34, 'brown');
+    var human_3 = new Human('Bob', 14, 'black');
+
+    human_1.nationality = Human.nationality('america');
+    human_2.nationality = Human.nationality('europe');
+    human_3.nationality = Human.nationality('africa');
+
+
+    // В конце возвращается "undefined" и не понятно почему. Хмм...
+
+    // human_1.message();
+    document.write(human_1);
+    // human_1.welcome();
+
+    // human_2.message();
+    document.write(human_2);
+    // human_2.welcome();
+
+    // human_2.message();
+    document.write(human_3);
+    // human_3.welcome();
+
+
+
+  </script>
+
+</body>
+</html>

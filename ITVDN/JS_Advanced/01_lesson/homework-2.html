@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 1 - homework-2</title>
+</head>
+<body>
+
+
+  <script>
+
+    function Human(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Human.prototype.toString = function() {
+      return 'name: ' + this.name + ', age: ' + this.age;
+    }
+
+    // var arr = [];
+    // arr[0] = new Human('Jack', 34);
+    // arr[1] = new Human('Bob', 16);
+    // arr[2] = new Human('Mark', 27);
+    // arr[3] = new Human('John', 55);
+    // arr[4] = new Human('Tom', 19);
+
+    var arr = new Array(5);
+    var nameArr = ['Jack', 'Bob', 'Stive', 'Jodie', 'Mark'];
+    var ageArr = [45, 12, 76, 19, 23];
+
+    for(var i = 0; i < arr.length; i++) {
+      arr[i] = new Human(nameArr[i], ageArr[i]);
+    }
+
+    document.write(arr.join('<br>'));
+
+    // Сортировка по возрастанию
+    // ----------------------------------
+    document.write('<hr>');
+
+    arr.sort(function(a, b) {
+      return a.age - b.age;
+    })
+
+    document.write(arr.join('<br>'));
+
+    // Сортировка по убыванию
+    // ----------------------------------
+    document.write('<hr>');
+
+    arr.sort(function(a, b) {
+      return b.age - a.age;
+    })
+
+    document.write(arr.join('<br>'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

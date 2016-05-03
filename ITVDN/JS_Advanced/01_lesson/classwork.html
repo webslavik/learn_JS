@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 1 - classwork</title>
+</head>
+<body>
+
+  <script>
+
+    function Box(height, width, depth, material) {
+      this.height = height;
+      this.width = width;
+      this.depth = depth;
+      this.material = material;
+    }
+
+    Box.prototype.volume = function() {
+      return this.height * this.width * this.depth;
+    }
+
+    Box.prototype.equals = function(otherObject) {
+      if(this.material === otherObject.material) return true;
+      return false;
+
+    }
+
+    var test_1 = new Box(10, 25, 4, 'wood');
+    var test_2 = new Box(2, 2, 2, 'wood');
+    var test_3 = new Box(5, 10, 34, 'metal');
+
+    console.log(test_1.volume());
+    console.log(test_2.volume());
+    console.log(test_3.volume());
+
+    var res = test_1.equals(test_2);
+    console.log(res);
+
+    res = test_1.equals(test_3);
+    console.log(res);
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 1 - homework-1</title>
+</head>
+<body>
+
+
+  <script>
+
+    function SomeF() {
+
+      this.a = 15;
+      // var b = 'You will be my friend!'; // неправильно! надо было создать 'Свойство'
+      SomeF.b = 'You will be my friend!' // <= вот как надо было сделать
+
+      this.message = function() {
+        alert('Hi! I"m a new Object');
+        SomeF.innerMessage();
+      };
+
+
+      // var innerMessage = function() { // неправильно!
+      //   alert(SomeF.b);
+      // };
+
+      SomeF.innerMessage = function() { // <= правильно
+        alert(SomeF.b);
+      };
+
+    }
+
+    var newObj = new SomeF();
+
+    newObj.message();
+
+
+
+  </script>
+
+</body>
+</html>

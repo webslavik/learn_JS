@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 1 - homework-4</title>
+</head>
+<body>
+
+
+  <script>
+
+    // Constructor
+    // -------------------------------------
+    function Human(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Human.prototype.toString = function() {
+      return 'I am ' + this.name + ', ' + this.age + ' yers old. <br>';
+    }
+
+    var human_1 = new Human('Bob', 17);
+    var human_2 = new Human('Jack', 23);
+
+    document.write(human_1);
+    document.write(human_2.toString());
+
+
+    // Object
+    // -------------------------------------
+    var test = {
+      name: 'Jack',
+
+      toString: function() {
+        return this.name;
+      }
+    }
+
+    document.write(test);
+
+
+
+  </script>
+
+</body>
+</html>
