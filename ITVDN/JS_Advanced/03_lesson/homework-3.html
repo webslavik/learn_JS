@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 3 - homework-3</title>
+</head>
+<body>
+
+
+
+  <script>
+
+    function queryParse(query) {
+
+      // our patterns
+      var patternValue = /\d{1,}/g;
+      var patternSign = /[\+\-\*\/]/;
+
+      var res = 0;
+
+      var arrValue = query.match(patternValue);
+
+      var posSign = query.search(patternSign);
+      var getSign = query.charAt(posSign);
+
+      var value1 = parseInt(arrValue[0]);
+      var value2 = parseInt(arrValue[1]);
+
+      switch(getSign) {
+        case '+': res = value1 + value2; break;
+        case '-': res = value1 - value2; break;
+        case '*': res = value1 * value2; break;
+        case '/':
+          if(value2 == 0) return;
+          res = value1 / value2; break;
+        default: alert('Неправильный символ');
+      }
+
+      return res;
+
+    }
+
+    var query = prompt('Введите строку с арифметическим действием (например: 50 + 10):', '');
+
+    var res = queryParse(query);
+
+    if(res == undefined) {
+      alert('На ноль делить нельзя');
+    } else {
+      // output our result
+      var p = document.createElement('p');
+      p.innerHTML = 'Результат: ' + res;
+      document.body.appendChild(p);
+    }
+
+  </script>
+
+</body>
+</html>

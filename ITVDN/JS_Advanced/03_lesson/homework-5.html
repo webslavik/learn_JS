@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 3 - homework 5</title>
+</head>
+<body>
+
+  <!-- <p id='ranLine'></p> -->
+
+
+  <input id='value' type="text">
+
+  <script>
+
+    // My solution...
+    //-------------------------------------------------
+    // var p = document.getElementById('ranLine');
+    //
+    // var str = prompt('Введите вашу строку: ', '');
+    // var i = 0;
+    //
+    // setInterval(ranLine, 200);
+    //
+    // function ranLine() {
+    //
+    //   if(i <= str.length) {
+    //     p.innerHTML = str.substring(0, i);
+    //     i++;
+    //   } else {
+    //     p.innerHTML = '';
+    //     i = 0;
+    //   }
+    //
+    // }
+
+
+    // and Answer ...
+    //-------------------------------------------------
+    document.getElementById('value').onblur = function() {
+      var value = this.value;
+
+      var newElement = document.createElement('marquee');
+
+      newElement.setAttribute('bahavior', 'alternate');
+      newElement.setAttribute('direction', 'left');
+
+      newElement.innerHTML = value;
+
+      document.body.appendChild(newElement);
+    }
+
+
+  </script>
+
+</body>
+</html>

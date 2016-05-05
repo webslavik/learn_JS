@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 2 - homework-4</title>
+
+  <style>
+    a {
+      display: block;
+      margin-bottom: 30px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <a href="#">JS Урок 1</a>
+  <a href="#">JS Урок 2</a>
+  <a href="#">JS Урок 3</a>
+
+
+  <script>
+
+    var links = document.getElementsByTagName('a');
+
+    // Flags
+    var firstFlag = false;
+    var secondFlag = false;
+    var thirdFlag = false;
+
+    links[0].onclick = function() {
+
+      this.innerHTML += ' (открыто)';
+
+      var newW = document.open('window-1.html', 'JS Урок 1', 'width=600, height=600, left=200, top=100');
+
+      firstFlag = !firstFlag;
+
+      if(!firstFlag) {
+        this.innerHTML = 'JS Урок 1';
+        newW.close();
+      }
+
+    }
+
+    links[1].onclick = function() {
+
+      this.innerHTML += ' (открыто)';
+
+      var newW = document.open('window-2.html', 'JS Урок 2', 'width=600, height=600, left=200, top=100');
+
+      secondFlag = !secondFlag;
+
+      if(!secondFlag) {
+        this.innerHTML = 'JS Урок 2';;
+        newW.close();
+      }
+    }
+
+    links[2].onclick = function() {
+      this.innerHTML += ' (открыто)';
+      newW = document.open('window-3.html', 'JS Урок 3', 'width=600, height=600, left=200, top=100');
+
+      thirdFlag = !thirdFlag;
+
+      if(!thirdFlag) {
+        this.innerHTML = 'JS Урок 3';;
+        newW.close();
+      }
+    }
+
+
+
+
+  </script>
+
+</body>
+</html>

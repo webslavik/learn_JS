@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 3 - homework-2</title>
+
+  <script>
+
+    window.onload = function() {
+
+      function getQuery() {
+
+        var pattern = /\d{1,}/g;
+        var sum = 0;
+
+        var query = location.search.substring(1);
+        var arr = query.match(pattern);
+
+        for(var i = 0; i < arr.length; i++) {
+          var convert = parseInt(arr[i]);
+          sum += convert;
+        }
+
+        return sum;
+      }
+
+      var sum = getQuery();
+
+      var output = document.createElement('h2');
+      output.innerHTML = 'Сумма: ' + sum;
+
+      document.body.appendChild(output);
+
+    }
+
+  </script>
+</head>
+<body>
+
+  <h1>Сумма двух GET параметров</h1>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 3 - homework-1</title>
+
+  <script>
+
+    window.onload = function() {
+
+      var start = document.getElementById('bt1');
+      var stop = document.getElementById('bt2');
+      var reset = document.getElementById('bt3');
+
+      var second = document.getElementById('second');
+      var minute = document.getElementById('minute');
+      var hour = document.getElementById('hour');
+
+      var resetInterval;
+
+      var countHour = 0,
+          countMinute = 0,
+          countSecond = 0;
+
+
+      // LAUNCH our stopwatch
+      //---------------------------------------
+      function stopwatch() {
+
+        // seconds
+        countSecond++;
+        if(countSecond < 10) second.innerHTML = '0' + countSecond;
+        else second.innerHTML = countSecond;
+
+
+        if(countSecond == 59) {
+          countSecond = 0;
+
+          // minutes
+          countMinute++;
+          if(countMinute < 10) minute.innerHTML = '0' + countMinute;
+          else minute.innerHTML = countMinute;
+
+
+          if(countMinute == 59) {
+            countMinute = 0;
+
+            // hours
+            countHour++;
+            if(countHour < 9) hour.innerHTML = '0' + countHour;
+            else hour.innerHTML = countHour;
+          }
+
+        }
+
+      }
+
+      // function RESET our stopwatch
+      //---------------------------------------
+      function resetStopwatch() {
+        clearInterval(resetInterval);
+
+        // reset our element
+        hour.innerHTML = '00';
+        minute.innerHTML = '00';
+        second.innerHTML = '00';
+
+        // reset our counter
+        countHour = 0;
+        countMinute = 0;
+        countSecond = 0;
+      }
+
+
+      // START stopwatch
+      //---------------------------------------
+      start.onclick = function() {
+        resetInterval = setInterval(stopwatch, 20);
+      }
+
+      // STOP stopwatch
+      //---------------------------------------
+      stop.onclick = function() {
+        clearInterval(resetInterval);
+      }
+
+      // RESET stopwatch
+      //---------------------------------------
+      reset.onclick = function() {
+        resetStopwatch();
+        resetInterval = setInterval(stopwatch, 20);
+      }
+
+
+    }
+
+  </script>
+</head>
+<body>
+
+  <p>
+    <span id='hour'>00</span>:
+    <span id='minute'>00</span>:
+    <span id='second'>00</span>
+  </p>
+
+  <input id='bt1' type="button" value='Старт'>
+  <input id='bt2' type="button" value='Стоп'>
+  <input id='bt3' type="button" value='Сбросить'>
+
+</body>
+</html>
