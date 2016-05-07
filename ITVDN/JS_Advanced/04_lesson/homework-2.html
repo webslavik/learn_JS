@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 4 - homework 2</title>
+  <link rel="stylesheet" href="homework-2.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <form id='form' action="">
+
+      <label for=""> Логин
+        <input id='login' type="text">
+      </label>
+      <label for=""> Пароль
+        <input id='password' type="text">
+      </label>
+
+      <input id='bt' type="button" value='Вход'>
+
+      <label for=""> Запомнить меня
+        <input type="checkbox">
+      </label>
+
+    </form>
+    <span id='error'>Вы не заполнили поля логин и пароль</span>
+    <span id='success'>Вы авторизированы</span>
+
+  </div>
+
+
+  <script>
+
+    var button = document.getElementById('bt');
+    var login = document.getElementById('login');
+    var password = document.getElementById('password');
+
+    var error = document.getElementById('error');
+    var success = document.getElementById('success');
+
+    error.style.display = 'none';
+    success.style.display = 'none';
+
+    button.onclick = function() {
+      var valueLogin = login.value;
+      var valuePassword = password.value;
+
+      notification(valueLogin, valuePassword)
+    }
+
+
+    function notification(valueLogin, valuePassword) {
+      var rightLogin = 'admin';
+      var rightPass = '12345';
+
+      // for Login
+      if(valueLogin != '') {
+        login.style.backgroundColor = 'lightgreen';
+        error.style.display = 'none';
+      }
+      else {
+        login.style.backgroundColor = 'tomato';
+        error.style.display = 'block';
+      }
+
+      // for Password
+      if(valuePassword != '') {
+        password.style.backgroundColor = 'lightgreen';
+        error.style.display = 'none';
+      }
+      else {
+        password.style.backgroundColor = 'tomato';
+        error.style.display = 'block';
+      }
+
+      // if Login and Password right
+      if(valueLogin == rightLogin && valuePassword == rightPass) {
+        success.style.display = 'block';
+      } else {
+        success.style.display = 'none';
+      }
+
+
+    }
+
+
+  </script>
+
+
+
+</body>
+</html>

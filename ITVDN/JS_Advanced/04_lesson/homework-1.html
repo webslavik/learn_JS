@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lessong 4 - homework-1</title>
+</head>
+<body>
+
+  <h3>Угадай значение от 1 до 100</h3>
+
+  <input id='guess' type="text">
+  <input id='bt' type="button" value='button'>
+  <p id='output'></p>
+
+
+
+  <script>
+
+    var button = document.getElementById('bt');
+    var p = document.getElementById('output');
+
+
+    button.onclick = function() {
+
+      var num = parseInt(document.getElementById('guess').value);
+
+      var res = guessNumber(num);
+
+      document.body.appendChild(res);
+
+
+    }
+
+    function guessNumber(num) {
+      var answer = 67;
+      var p = document.createElement('p');
+
+      if(num < answer) {
+        p.innerHTML = 'загаданное значение больше введенного вами';
+        p.style.color = 'red';
+      } else if(num > answer) {
+        p.innerHTML = 'загаданное значение меньше введенного вами';
+        p.style.color = 'red';
+      } else {
+        p.innerHTML = 'Поздравляем! Вы победили :)';
+        p.style.color = 'green';
+      }
+
+      return p;
+    }
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+body {
+  text-align: center;
+}
+/*
+form {
+  margin-top: 200px;
+}*/
+
+label {
+  display: block;
+  margin: 15px auto;
+  /*margin-bottom: 20px;*/
+}

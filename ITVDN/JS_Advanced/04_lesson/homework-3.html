@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 4 - homework 3</title>
+
+  <style>
+
+
+    div {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div id="first"></div>
+  <div id="second"></div>
+  <div id="third"></div>
+
+
+  <script>
+
+    var first = document.getElementById('first');
+    var second = document.getElementById('second');
+    var third = document.getElementById('third');
+
+    first.style.backgroundColor = 'tomato';
+    second.style.backgroundColor = 'green';
+    third.style.backgroundColor = 'purple';
+
+
+    // The decision before I looked the answer
+    //----------------------------------------
+    // var max = 800;
+    // var min = 20;
+    //
+    //
+    // setInterval(function() {
+    //   moveFirstDiv();
+    //   moveSecondDiv();
+    //   moveThirdDiv();
+    // }, 1000);
+    //
+    //
+    // // FIRST div
+    // //----------------------------------------
+    // function moveFirstDiv() {
+    //   var moveX = Math.floor(Math.random() * (max - min) + min);
+    //   var moveY = Math.floor(Math.random() * (max - min) + min);
+    //
+    //   first.style.top = moveX + 'px';
+    //   first.style.left = moveY + 'px';
+    //
+    // }
+    //
+    //
+    // // SECOND div
+    // //----------------------------------------
+    // function moveSecondDiv() {
+    //   var moveX = Math.floor(Math.random() * (max - min) + min);
+    //   var moveY = Math.floor(Math.random() * (max - min) + min);
+    //
+    //   second.style.top = moveX + 'px';
+    //   second.style.left = moveY + 'px';
+    //
+    // }
+    //
+    //
+    // // THIRD div
+    // //----------------------------------------
+    // function moveThirdDiv() {
+    //   var moveX = Math.floor(Math.random() * (max - min) + min);
+    //   var moveY = Math.floor(Math.random() * (max - min) + min);
+    //
+    //   third.style.top = moveX + 'px';
+    //   third.style.left = moveY + 'px';
+    //
+    // }
+
+
+    // .. after
+    //----------------------------------------
+    var x = window.innerWidth - 100;
+    var y = window.innerHeight - 100;
+
+    console.log(x);
+    console.log(y);
+
+
+    setInterval(function() {
+      moveFirstDiv();
+      moveSecondDiv();
+      moveThirdDiv();
+    }, 1000);
+
+
+    // FIRST div
+    //----------------------------------------
+    function moveFirstDiv() {
+      first.style.top = getRandom(y, 1) + 'px';
+      first.style.left = getRandom(x, 1) + 'px';
+    }
+
+
+    // SECOND div
+    //----------------------------------------
+    function moveSecondDiv() {
+      second.style.top = getRandom(y, 1) + 'px';
+      second.style.left = getRandom(x, 1) + 'px';
+    }
+
+
+    // THIRD div
+    //----------------------------------------
+    function moveThirdDiv() {
+      third.style.top = getRandom(y, 1) + 'px';
+      third.style.left = getRandom(x, 1) + 'px';
+    }
+
+    // this function return random number
+    //----------------------------------------
+    function getRandom(max, min) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+
+  </script>
+
+</body>
+</html>

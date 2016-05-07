@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 4 - classwork</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div>First</div>
+  <div>Second</div>
+  <div>Third</div>
+  <div>Fourth</div>
+  <div>Fifth</div>
+
+  <button id="button">Button</button>
+
+
+  <script>
+
+    var button = document.getElementById('button');
+    var div = document.getElementsByTagName('div');
+    var count = 0;
+
+    button.onclick = function() {
+
+      if(count == div.length) {
+        count = 0;
+      }
+
+      // First div
+      if(count == 0) {
+        div[div.length - 1].style.backgroundColor = ''; // remove color from the last
+        div[count].style.backgroundColor = 'red'; // add color first
+        count++;
+        return;
+      }
+
+      // Other div
+      div[count - 1].style.backgroundColor = ''; // remove color previous div
+      div[count].style.backgroundColor = 'red';
+      count++;
+
+    }
+
+  </script>
+
+</body>
+</html>

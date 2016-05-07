@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 4 - homework-4</title>
+  <style>
+    #moveBox {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+      font-size: 26px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+
+  <input id='up' type="button" value='вверх'>
+  <input id='down' type="button" value='вниз'>
+  <input id='left' type="button" value='влево'>
+  <input id='right' type="button" value='вправо'>
+
+  <div id='moveBox'>I can move</div>
+
+
+  <script>
+
+    var div = document.getElementById('moveBox');
+    div.style.top = '200px';
+    div.style.left = '200px';
+
+    // move Left
+    //---------------------------------------------------
+    get('right').onclick = function() {
+
+      var moveX = parseInt(getComputedStyle(div).left);
+      var count = 0;
+
+      var cancel = setInterval(function() {
+        if(count > 100) {
+          clearInterval(cancel);
+          count = 0;
+          return;
+        }
+
+        var move = moveX + count;
+        div.style.left = move + 'px';
+        count++;
+
+      }, 10);
+
+    }
+
+    // move Left
+    //---------------------------------------------------
+    get('left').onclick = function() {
+
+      var moveX = parseInt(getComputedStyle(div).left);
+      var count = 0;
+
+      var cancel = setInterval(function() {
+        if(count > 100) {
+          clearInterval(cancel);
+          count = 0;
+          return;
+        }
+
+        var move = moveX - count;
+        div.style.left = move + 'px';
+        count++;
+
+      }, 10);
+
+    }
+
+
+    // move Top
+    //---------------------------------------------------
+    get('up').onclick = function() {
+
+      var moveY = parseInt(getComputedStyle(div).top);
+      var count = 0;
+
+      var cancel = setInterval(function() {
+        if(count > 100) {
+          clearInterval(cancel);
+          count = 0;
+          return;
+        }
+
+        var move = moveY - count;
+        div.style.top = move + 'px';
+        count++;
+
+      }, 10);
+
+    }
+
+
+    // move Down
+    //---------------------------------------------------
+    get('down').onclick = function() {
+
+      var moveY = parseInt(getComputedStyle(div).top);
+      var count = 0;
+
+      var cancel = setInterval(function() {
+        if(count > 100) {
+          clearInterval(cancel);
+          count = 0;
+          return;
+        }
+
+        var move = moveY + count;
+        div.style.top = move + 'px';
+        count++;
+
+      }, 10);
+
+    }
+
+
+    function get(id) {
+      return document.getElementById(id);
+    }
+
+  </script>
+
+</body>
+</html>

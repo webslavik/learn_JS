@@ -1,0 +1,11 @@
+div {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background-color: lightgreen;
+}
+
+button {
+  display: block;
+  clear: both;
+}
