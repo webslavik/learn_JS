@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 5 - homework-2</title>
+</head>
+  <body>
+
+    <p id='first'>Lorem ipsum dolor sit amet.</p>
+    <p id='second'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit repellendus, beatae natus aspernatur, magni deleniti commodi quibusdam totam cupiditate labore!</p>
+
+
+    <script>
+
+      var Frog = {};
+      var paragraph = document.getElementById('first');
+
+      Frog.event = function(elem, event) {
+
+        // new browsers
+        if(elem.addEventListener) {
+          elem.addEventListener(event, function() {
+            this.style.backgroundColor = 'red';
+          }, false);
+        }
+
+        // ie
+        if(elem.attachEvent) {
+          var ie_event = 'on' + event;
+          elem.attachEvent(ie_event, function() {
+            elem.style.backgroundColor = 'red';
+          });
+        }
+      }
+
+      Frog.event(paragraph, 'mouseover')
+
+
+    </script>
+  </body>
+</html>
