@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 6 - homework-1</title>
+</head>
+<body>
+
+  <input id='text' type="text">
+  <input id='btn' type="button" value='сохранить'>
+
+  <script>
+
+    var flag = false;
+
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function() {
+      flag = true;
+    }
+
+    window.onbeforeunload = function() {
+      var text = document.getElementById('text').value.length;
+
+      if(!flag && text != 0) {
+        return 'сохранитесь';
+      }
+    }
+
+
+
+  </script>
+
+</body>
+</html>

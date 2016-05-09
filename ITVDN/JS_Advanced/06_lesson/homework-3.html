@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 6 - homework-2</title>
+  <style>
+    input {
+      position: absolute;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="button" value='получить скидку'>
+
+  <script>
+
+    var btn = document.getElementsByTagName('input')[0];
+
+    btn.addEventListener('mouseover', function(e){
+
+
+      this.style.left = e.clientX + 15 + 'px';
+      this.style.top = e.clientX + 15 + 'px';
+
+    }, false);
+
+  </script>
+
+</body>
+</html>

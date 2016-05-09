@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 6 - homework-2</title>
+</head>
+<body>
+
+  <script>
+
+    document.addEventListener('keydown', function(e) {
+
+      // my version...
+      if(e.ctrlKey) {
+        if(e.shiftKey) {
+          if(e.keyCode === 83) return alert('сохранено все');
+        }
+      }
+
+      if(e.ctrlKey) {
+        if(e.keyCode === 83) return alert('сохранено');
+        if(e.keyCode === 65) return alert('выбрано все');
+      }
+
+
+      //...after "Answer"
+      // if(e.ctrlKey == true && e.shiftKey == true && e.keyCode == 83) {
+      //   return alert('сохранено все');
+      // }
+    }, false);
+
+  </script>
+
+</body>
+</html>

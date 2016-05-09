@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 6 - homework-2</title>
+</head>
+<body>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea omnis in dolores necessitatibus, sed maxime vitae eaque obcaecati voluptate soluta? Unde fuga natus modi, voluptate obcaecati accusamus corrupti maiores perspiciatis.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea omnis in dolores necessitatibus, sed maxime vitae eaque obcaecati voluptate soluta? Unde fuga natus modi, voluptate obcaecati accusamus corrupti maiores perspiciatis.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea omnis in dolores necessitatibus, sed maxime vitae eaque obcaecati voluptate soluta? Unde fuga natus modi, voluptate obcaecati accusamus corrupti maiores perspiciatis.</p>
+
+  <script>
+
+    var text = document.getElementsByTagName('p');
+
+    document.addEventListener('keypress', function(e) {
+
+      var symbol = String.fromCharCode(e.charCode);
+
+      if(symbol == 'r') {
+        for(var i = 0; i < text.length; i++) {
+          text[i].style.color = 'red';
+        }
+      }
+      if(symbol == 'g') {
+        for(var i = 0; i < text.length; i++) {
+          text[i].style.color = 'green';
+        }
+      }
+      if(symbol == 'b') {
+        for(var i = 0; i < text.length; i++) {
+          text[i].style.color = 'blue';
+        }
+      }
+
+    }, false)
+
+  </script>
+
+</body>
+</html>
