@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 8 - classwork</title>
+</head>
+<body>
+
+  <script>
+
+    function getCookie(name) {
+      var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+      return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+
+    function lastVisit() {
+      var last = 'last-visit';
+
+      var res = getCookie(last);
+
+      var span = document.createElement('span');
+      span.innerHTML = 'Последний раз страница посещалась: ' + res;
+
+      document.body.appendChild(span);
+    }
+
+    function setLastVisit() {
+      document.cookie = 'last-visit=' + encodeURIComponent(document.lastModified) + ';max-age=' + (60 * 60 * 24 * 30);
+    }
+
+    lastVisit();
+    setLastVisit();
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

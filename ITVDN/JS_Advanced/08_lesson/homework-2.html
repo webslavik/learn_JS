@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 8 - homework-2</title>
+</head>
+<body>
+
+  <form name='form' action="">
+
+    <select name="color" id="select">
+      <option value="#2ecc71">Green</option>
+      <option value="#f1c40f">Orange</option>
+      <option value="#3498db">Blue</option>
+      <option value="#9b59b6">Purple</option>
+    </select>
+
+    <input id='fSize' type="text">
+
+    <input id='btn' type="button" value='Сохранить'>
+
+  </form>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui vero tempora enim necessitatibus eum est quasi reiciendis inventore, nemo velit? Adipisci dignissimos debitis officiis eum aspernatur officia omnis, doloribus aperiam architecto quo, est, ipsa temporibus tempore corporis. Dolorem, est.</p>
+
+  <script>
+
+
+    if(window.localStorage.bgColor) {
+      document.body.style.backgroundColor = window.localStorage.bgColor;
+    }
+    if(window.localStorage.fSize) {
+      document.body.style.fontSize = window.localStorage.fSize;
+    }
+
+
+    var button = document.getElementById('btn');
+
+    button.addEventListener('click', function() {
+      var size = document.getElementById('fSize').value;
+      var color = document.getElementById('select').value;
+
+      window.localStorage.fSize = size + 'px';
+      document.body.style.fontSize = size + 'px';
+
+      window.localStorage.bgColor = color;
+      document.body.style.backgroundColor = color;
+
+    }, false);
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 8 - homework-1</title>
+</head>
+<body>
+
+  <form name='form' action="">
+
+    <select name="color" id="select">
+      <option value="#2ecc71">Green</option>
+      <option value="#f1c40f">Orange</option>
+      <option value="#3498db">Blue</option>
+      <option value="#9b59b6">Purple</option>
+    </select>
+
+    <input id='fSize' type="text" date-pattern>
+
+    <input id='btn' type="button" value='Сохранить'>
+
+  </form>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam qui vero tempora enim necessitatibus eum est quasi reiciendis inventore, nemo velit? Adipisci dignissimos debitis officiis eum aspernatur officia omnis, doloribus aperiam architecto quo, est, ipsa temporibus tempore corporis. Dolorem, est.</p>
+
+  <script>
+
+
+    var savedColor = findCookieValue('bg-color');
+    var savedSize = findCookieValue('font-size');
+    if(savedColor) document.body.style.backgroundColor = savedColor;
+    if(savedSize) document.body.style.fontSize = savedSize + 'px';
+
+    var button = document.getElementById('btn');
+
+    var bgColor = document.getElementById('select');
+    var fSize = document.getElementById('fSize');
+
+    fSize.addEventListener('keypress', function(e) {
+      var pattern = /\d/;
+      var symbol = String.fromCharCode(e.charCode);
+
+      var res = symbol.search(pattern);
+      if(res == -1) {
+        e.preventDefault();
+      }
+      // console.log(res);
+    }, false);
+
+    button.addEventListener('click', function() {
+
+      // bg color
+      //-------------------------------------
+      var color = bgColor.value;
+      document.cookie = 'bg-color=' + encodeURIComponent(color) + ';max-age=' + (60*60*24*30);
+      document.body.style.backgroundColor = color;
+
+
+      // font size
+      //-------------------------------------
+      var size = fSize.value;
+      document.cookie = 'font-size=' + encodeURIComponent(size) + ';max-age=' + (60*60*24*30);
+      document.body.style.fontSize = size + 'px';
+
+    }, false);
+
+
+    function findCookieValue(cookieName) {
+      var allcookies = document.cookie;
+      var pos = allcookies.indexOf(cookieName + "=");
+
+      if (pos != -1) {
+          var start = pos + cookieName.length + 1;
+          var end = allcookies.indexOf(";", start);
+
+          if (end == -1) end = allcookies.length;
+
+          var value = allcookies.substring(start, end);
+          value = decodeURIComponent(value);
+          return value;
+      }
+    }
+
+
+  </script>
+
+</body>
+</html>
