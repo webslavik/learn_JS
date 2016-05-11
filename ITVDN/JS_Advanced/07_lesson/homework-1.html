@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 7 - homework-1</title>
+</head>
+<body>
+
+  <h3>Закажите вашу пиццу:</h3>
+
+  <!-- OLD VERSION -->
+  <!-- ################################################# -->
+  <!-- <form action="">
+
+    <label>
+      Меленькая
+      <input type="radio" name='pizza' data-pizza-price='50'>
+    </label>
+    <label>
+      Средняя
+      <input type="radio" name='pizza' data-pizza-price='75'>
+    </label>
+    <label>
+      Большая
+      <input type="radio" name='pizza' data-pizza-price='100'>
+    </label>
+
+    <p>Дополнительные ингридиенты:</p>
+
+    <label>
+      Грибы
+      <input type="checkbox" name='pizza' data-pizza-ingr='5'>
+    </label>
+    <label>
+      Бекон
+      <input type="checkbox" name='pizza' data-pizza-ingr='15'>
+    </label>
+    <label>
+      Помидоры
+      <input type="checkbox" name='pizza' data-pizza-ingr='2.50'>
+    </label>
+
+    <label>
+      Сыр
+      <input type="checkbox" name='pizza' data-pizza-ingr='11.49'>
+    </label>
+
+    <label>
+      Оливки
+      <input type="checkbox" name='pizza' data-pizza-ingr='17'>
+    </label>
+
+    <p>Цена вашей пиццы: <span id='output'></span> </p>
+    <p>Введите ваши данные:</p>
+    <input type="text" value='phone' data-watermark='Ваш телефон'>
+    <input type="text" value='address' data-watermark='Ваш адрес'>
+
+    <br>
+
+    <input type="submit" value='Отправить'>
+
+  </form> -->
+
+  <form name='pizza' action="">
+
+    <label>Меленькая
+      <input type="radio" name='pizza' value='small'>
+    </label>
+    <label>Средняя
+      <input type="radio" name='pizza' value='normal'>
+    </label>
+    <label>Большая
+      <input type="radio" name='pizza' value='big'>
+    </label>
+
+    <p>Дополнительные ингридиенты:</p>
+    <label>
+      <input type="checkbox"  name="ingr" value="mashrooms" /> Грибы
+    </label>
+    <label>
+      <input type="checkbox"  name="ingr" value="bekon" /> Бекон
+    </label>
+    <label>
+      <input type="checkbox"  name="ingr" value="tomato" /> Помидоры
+    </label>
+    <label>
+      <input type="checkbox"  name="ingr" value="cheese" /> Сыр
+    </label>
+    <label>
+      <input type="checkbox"  name="ingr" value="olive" /> Оливки
+    </label>
+
+
+    <p>Введите ваши данные:</p>
+    <input type="text" class="input" name="name" placeholder="You name" required title="Name" pattern="[A-Za-zА-Яа-яЁё]+"/>
+    <input type="tel"  class="input" name="tel"  placeholder="You phone" required title="contact telephone +38(095)123-45-67" pattern="\+38\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}"/>
+    <input type="text" class="input" name="address" placeholder="You address" required title="Order address" pattern="[A-Za-zА-Яа-яЁё0-9,.\-\s]+"/>
+
+    <br />
+    <p>Цена вашей пиццы: <span id='total'></span> </p>
+    <input type="submit" />
+
+  </form>
+
+  <script src='homework-1.js'></script>
+
+</body>
+</html>

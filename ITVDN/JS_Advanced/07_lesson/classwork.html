@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 7 - classwork</title>
+  <style>
+    label,
+    span {
+      display: block;
+    }
+    label {
+      margin-bottom: 20px;
+    }
+
+    .error {
+      background-color: tomato;
+    }
+    .success {
+      background-color: lightgreen;
+    }
+    #output {
+      color: red;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="">
+    <label for="">
+      <span>Имя:</span>
+      <input type="text" name='firstName'
+            data-pattern='\D'
+            data-msg='Только буквы'
+            data-msg-id='firstNameMsg'>
+
+      <span id='firstNameMsg'></span>
+    </label>
+
+    <label for="">
+      <span>Фамилия:</span>
+      <input type="text" name='lastName'
+            data-pattern='\D'
+            data-msg='Только буквы'
+            data-msg-id='lastNameMsg'>
+
+      <span id='lastNameMsg'></span>
+    </label>
+
+    <label for="">
+      <span>Логин:</span>
+      <input type="text" name='login'
+            data-pattern='\S'
+            data-msg='Необходимо задать логин'
+            data-msg-id='loginMsg'>
+
+      <span id='loginMsg'></span>
+    </label>
+
+    <label for="">
+      <span>Пароль:</span>
+      <input type="password" name='password'
+            data-pattern='\S{5}'
+            data-msg='Минимум 5 символов'
+            data-msg-id='passwordMsg'>
+
+      <span id='passwordMsg'></span>
+    </label>
+
+    <label for="">
+      <span>Подтвердите пароль:</span>
+      <input type="password" name='checkPassword'
+            data-pattern='\S{5}'
+            data-msg='Пароли не совпадают'
+            data-msg-id='checkPasswordMsg'>
+
+      <span id='checkPasswordMsg'></span>
+    </label>
+
+    <label for="">
+      <span>Email:</span>
+      <input type="text" name='email'
+            data-pattern='\b[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}\b'
+            data-msg='Неправильный формат почты'
+            data-msg-id='emailMsg'>
+
+      <span id='emailMsg' class='hidden'></span>
+    </label>
+
+    <label for="">
+      <span>Укажите ваш пол:</span>
+      <input type="radio" name='gender'>Мужчина
+      <input type="radio" name='gender'>Женщина
+    </label>
+
+    <input type="submit" value='Отправить'>
+
+    <p id=output>Необходимо заполнить все поля</p>
+
+  </form>
+
+  <script src='classwork.js'></script>
+
+</body>
+</html>

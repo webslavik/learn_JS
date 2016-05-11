@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 7 - homework-2</title>
+  <script src='Module.js'></script>
+</head>
+<body>
+
+  <form action="">
+    <input type="text" name='login' data-watermark='Введите свой логин'>
+    <input type="text" name='password' data-watermark='Введите свой пароль'>
+    <input type="text" name='email' data-watermark='Введите почтовый ящик'>
+    <input type="text">
+  </form>
+
+</body>
+
+  <script>
+
+    var login = document.forms[0].login;
+    var password = document.forms[0].password;
+    var email = document.forms[0].email;
+
+    Module.watermark(login);
+    Module.watermark(password);
+    Module.watermark(email);
+
+
+  </script>
+
+</html>
