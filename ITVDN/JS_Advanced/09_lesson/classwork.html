@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 9 - classwork</title>
+</head>
+<body>
+
+  <img src="http://fillmurray.com/200/300" alt="Bill Murray">
+  <img src="http://fillmurray.com/200/300" alt="Bill Murray">
+  <img src="http://fillmurray.com/200/300" alt="Bill Murray">
+  <img src="http://fillmurray.com/200/300" alt="Bill Murray">
+
+
+
+
+  <script>
+
+    var images = document.images;
+
+    outputImgURL();
+    makeImgBorder();
+
+
+    function outputImgURL() {
+      var ul = document.createElement('ol');
+
+      for(var i = 0, len = images.length; i < len; i++) {
+        var url = images[i].src;
+
+        var li = document.createElement('li');
+        li.innerHTML = url;
+
+        ul.appendChild(li);
+      }
+
+      document.body.appendChild(ul);
+    }
+
+
+    function makeImgBorder() {
+      var count = 0;
+
+      var timer = setInterval(function() {
+        images[count].style.border = '2px solid red';
+        count++;
+
+        if(count == images.length) {
+          clearInterval(timer);
+        }
+      }, 1000);
+
+    }
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 9 - homework-2</title>
+  <style>
+    img {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id='div'>
+    <img src="http://fillmurray.com/100/100" alt="">
+    <img src="http://www.placecage.com/100/100" alt="">
+    <img src="http://stevensegallery.com/100/100" alt="">
+  </div>
+
+
+  <script>
+
+    var images = document.images;
+    var div = document.getElementById('div');
+
+    div.onclick = function(e) {
+      var elem = e.target;
+      elem.style.width = 300 + 'px';
+      elem.style.height = 300 + 'px';
+
+      if(elem.previousElementSibling) {
+        elem.previousElementSibling.style.width = 100 +'px';
+        elem.previousElementSibling.style.height = 100 +'px';
+      }
+
+      if(elem.nextElementSibling) {
+        elem.nextElementSibling.style.width = 100 +'px';
+        elem.nextElementSibling.style.height = 100 +'px';
+      }
+
+      console.log(elem.nextElementSibling);
+    }
+
+
+
+  </script>
+
+</body>
+</html>

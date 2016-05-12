@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 9 - homework-1</title>
+  <style>
+    img {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="button" value='button 1'>
+  <input type="button" value='button 2'>
+  <input type="button" value='button 3'>
+
+  <img id='img' src="" alt="">
+
+  <script>
+    var buttons = document.getElementsByTagName('input');
+    var img = document.getElementById('img');
+
+    for(var i = 0, len = buttons.length; i < len; i++) {
+      buttons[i].addEventListener('click', function() {
+        if(this.value == 'button 1') {
+          img.src = 'http://fillmurray.com/200/300';
+        }
+        else if(this.value == 'button 2') {
+          img.src = 'http://www.placecage.com/200/300';
+        }
+        else if (this.value == 'button 3') {
+          img.src = 'http://stevensegallery.com/200/300';
+        }
+      }, false);
+    }
+
+  </script>
+
+</body>
+</html>
