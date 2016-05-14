@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 10 - homework-1</title>
+</head>
+<body>
+
+  <form action="">
+    <input id='first' type="text">
+    <input id='second' type="text">
+    <input id='btn' type="button" value='button'>
+  </form>
+
+  <p id='output'></p>
+
+
+  <script>
+
+    var a = document.getElementById('first');
+    var b = document.getElementById('second');
+    var button = document.getElementById('btn');
+    var output = document.getElementById('output');
+    var pattern = /\d/;
+
+    // a.onkeypress = function(e) {
+    //   var symbol = String.fromCharCode(e.charCode);
+    //   var res = symbol.search(pattern);
+    //   if(res == -1) {
+    //     e.preventDefault();
+    //   }
+    // }
+    //
+    // b.onkeypress = function(e) {
+    //   var symbol = String.fromCharCode(e.charCode);
+    //   var res = symbol.search(pattern);
+    //   if(res == -1) {
+    //     e.preventDefault();
+    //   }
+    // }
+
+    checkSymbol(a);
+    checkSymbol(b);
+
+    function checkSymbol(name) {
+      name.onkeypress = function(e) {
+        var symbol = String.fromCharCode(e.charCode);
+        var res = symbol.search(pattern);
+        if(res == -1) {
+          e.preventDefault();
+        }
+      }
+    }
+
+    button.onclick = function() {
+
+
+      var xhr = new XMLHttpRequest();
+
+      var params = 'a=' + a.value + '&b=' + b.value;
+
+      xhr.open('POST', 'CalcHandler.ashx', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+      xhr.send(params);
+
+      xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200) {
+          output.innerHTML = xhr.responseText;
+        } else {
+          output.innerHTML = 'Error: ' + xhr.status + ': ' + xhr.statusText;
+        }
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
