@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bubble Factory Test Lab</title>
+</head>
+<body>
+
+  <script>
+    var scores = [56, 45, 76, 34, 55, 71, 44, 23, 14, 55, 76];
+    var costs = [.25, .31, .25, .27, .28, .30, .26, .22, .31, .25, .21];
+
+
+    function printAndGetHighScore(scores) {
+      var highScore = 0;
+      var output;
+
+      for(var i = 0; i < scores.length; i++) {
+
+        output = 'Bubble solution #' + i + ' score: ' + scores[i];
+        console.log(output);
+
+        if(scores[i] > highScore) {
+          highScore = scores[i];
+        }
+      }
+
+      return highScore;
+    }
+
+    function getBestResult(scores, highScore) {
+      var bestSolutions = [];
+
+      for(var i = 0; i < scores.length; i++) {
+        if(scores[i] == highScore) {
+          bestSolutions.push(i);
+        }
+      }
+      return bestSolutions;
+    }
+
+    var highScore = printAndGetHighScore(scores);
+    var bestSolutions = getBestResult(scores, highScore);
+
+    console.log('Bubbles tests: ' + scores.length);
+    console.log('Highest bubble score: ' + highScore);
+    console.log('Solutions with the highest score: ' + bestSolutions);
+
+
+    function getMostCostEffectiveSolution(scores, costs, highScore) {
+      var cost = 100;
+      var index;
+
+      for(var i = 0; i < scores.length; i++) {
+        if(scores[i] == highScore) {
+          if(cost > costs[i] ) {
+            index = i;
+            cost = costs[i];
+          }
+        }
+      }
+
+      return index;
+    }
+
+    var mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore);
+    console.log('#' + mostCostEffective);
+
+  </script>
+
+</body>
+</html>
