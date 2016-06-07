@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chair</title>
+</head>
+<body>
+
+  <script>
+
+    // Ларри
+    //-------------------------------------
+    function validate(phoneNumber) {
+      if(phoneNumber.length > 8 ||
+          phoneNumber.length < 7) { // проверяем длину строки
+        return false;
+      }
+
+      for(var i = 0; i < phoneNumber.length; i++) { // проходимся по всем символам строки
+        if(i === 3) { // символ с индексом 3
+          if(phoneNumber.length === 8 && phoneNumber.charAt(i) !== '-') { // если этот симвом не дефис, то верни false
+            return false;
+          }
+        } else if(phoneNumber.length === 7 && isNaN(phoneNumber.charAt(i))) { // если другой символ не число, то вернется false
+          return false;
+        }
+      }
+      return true;
+    }
+
+
+    // Брэд
+    //-------------------------------------
+    function validate(phoneNumber) {
+      if(phoneNumber.length > 8 ||
+          phoneNumber.length < 7) { // проверяем длину строки
+        return false;
+      }
+
+      var first = phoneNumber.substring(0, 3); // вырезаем первые три символа строки
+      var second = phoneNumber.substring(phoneNumber.length - 4); // вырезаем все остальное. При этом символ с индексом 3 не трогаем
+
+      if(isNaN(first) || isNaN(second)) {
+        return false;
+      }
+      if(phoneNumber.length === 8) {
+        return (phoneNumber.charAt(3) === '-');
+      }
+
+      return true;
+    }
+
+  </script>
+
+</body>
+</html>

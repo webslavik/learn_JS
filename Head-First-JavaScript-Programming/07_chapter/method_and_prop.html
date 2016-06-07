@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String</title>
+</head>
+<body>
+
+  <script>
+
+    var str = 'Lorem ipsum, dog dolor.';
+    console.log(str.length);
+
+
+    // charAt
+    //------------------------------------
+    for(var i = 0; i < str.length; i++) {
+      if(str.charAt(i) === 'i') {
+        console.log('char pos.: ' + i);
+      }
+    }
+
+
+    // indexOf
+    //------------------------------------
+    var index = str.indexOf('dog');
+    console.log('index: ' + index);
+
+
+    // substring
+    //------------------------------------
+    var val = str.substring(13, 16);
+    console.log(val);
+
+    // split
+    //------------------------------------
+    var arr = str.split(',');
+    console.log('Some text ', arr);
+
+
+  </script>
+
+</body>
+</html>

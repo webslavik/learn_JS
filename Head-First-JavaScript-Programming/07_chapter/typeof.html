@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typeof</title>
+</head>
+<body>
+
+  <script>
+
+    'use strict';
+
+    var test1 = 'abc';
+    var test2 = 123;
+    var test3 = true;
+    var test4 = {};
+    var test5 = [];
+    var test6;
+    var test7 = {'abc': 123};
+    var test8 = ['abc', 123];
+    function test9() { return 'abc'};
+    var test10 = null;
+    var test11 = 0/0;
+
+    // console.log(typeof test1);
+    // console.log(typeof test2);
+    // console.log(typeof test3);
+    // console.log(typeof test4);
+    // console.log(typeof test5);
+    // console.log(typeof test6);
+    // console.log(typeof test7);
+    // console.log(typeof test8);
+    // console.log(typeof test9);
+    // console.log(typeof test10);
+    // console.log(typeof test11);
+
+
+
+    var a = [];
+
+    console.log(isNaN(a));
+
+
+    if(99 == '99') {
+      console.log('A number equals a string!');
+    } else {
+      console.log('No way a number equals a string');
+    }
+
+  </script>
+
+</body>
+</html>
