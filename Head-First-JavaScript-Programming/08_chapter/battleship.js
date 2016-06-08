@@ -3,21 +3,27 @@
 
     // получает сообщение и выводит его в области сообщения
     displayMessage: function(msg) {
-      // какой то код
+      var messageArea = document.getElementById('messageArea');
+      messageArea.innerHTML = msg;
     },
 
-    // метод определяет попали мы или нет.
-    // pos - позиция по которой был проведен выстрел
-    // 
-    displayShoot: function(pos) {
-
+    displayHit: function(location) {
+      var cell = document.getElementById(location);
+      cell.setAttribute('class', 'hit');
     },
 
-    // смотря что вернет предыдущий метод, этот добавит нужный класс
-    // элементу(клетке) по которому производился выстрел
-    displayMissOrShip() {
-
+    displayMiss: function(location) {
+      var cell = document.getElementById(location);
+      cell.setAttribute('class', 'miss');
     }
 
 
   }
+
+  view.displayMessage('Its work?');
+  view.displayMiss('00');
+  view.displayHit('34');
+  view.displayMiss('55');
+  view.displayHit('12');
+  view.displayMiss('25');
+  view.displayHit('26');
