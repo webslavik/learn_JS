@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sort</title>
+</head>
+<body>
+
+  <script>
+
+    var numbersArray = [60, 50, 62, 58, 54, 54];
+    console.log(numbersArray);
+
+    numbersArray.sort(compareNumbers);
+    function compareNumbers(a, b) {
+      return a - b;
+    }
+    console.log(numbersArray);
+
+    numbersArray.sort(compareNumbersDesc);
+    function compareNumbersDesc(a, b) {
+      return b - a;
+    }
+    console.log(numbersArray);
+
+  </script>
+
+</body>
+</html>
