@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Prototype</title>
+</head>
+<body>
+
+  <script>
+
+    function CarPrototype() {
+      this.make = 'Webville Motors';
+      this.year = 2016;
+      this.started = false;
+
+      this.start = function() {
+        this.started = true;
+      }
+
+      this.stop = function() {
+        this.started = false;
+      }
+
+      this.drive = function() {
+        if(this.started) {
+          console.log('Super car is move!');
+        } else {
+          console.log('You need start engine.')
+        }
+      }
+    }
+
+    var myCar = new CarPrototype();
+
+    myCar.wheels = 6;
+    myCar.color = 'black';
+    myCar.canFly = true;
+    myCar.computer = true;
+    myCar.material = 'Titanium';
+
+    myCar.fly = function() {
+      if(this.canFly && this.started) {
+        console.log('You car can fly!');
+      } else {
+        console.log('Sorry, you can\'t fly.');
+      }
+    }
+
+
+
+  </script>
+
+</body>
+</html>

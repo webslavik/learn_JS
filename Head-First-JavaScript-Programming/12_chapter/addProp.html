@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New properties</title>
+</head>
+<body>
+
+  <script>
+    function Dog(name, breed, weight) {
+      this.name = name;
+      this.breed = breed;
+      this.weight = weight;
+      this.bark = function() {
+        if(this.weight > 25) {
+          alert(this.name + ' says Woof!');
+        } else {
+          alert(this.name + ' says Yip!');
+        }
+      }
+    }
+
+    var fido = new Dog('Fido', 'Mixed', 38);
+    var spot = new Dog("Spot", "Chihuahua", 10);
+
+    fido.trust = function(person) {
+      return (person == 'Bob');
+    }
+
+    console.log(fido.trust('Travis'));
+    console.log(spot.trust('Travis'));
+
+  </script>
+
+</body>
+</html>
