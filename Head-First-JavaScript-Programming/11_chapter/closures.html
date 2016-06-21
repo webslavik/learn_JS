@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Closures</title>
+</head>
+<body>
+
+  <script>
+
+    // function makeCounter() {
+    //   var count = 0;
+    //
+    //   function counter() {
+    //     count++;
+    //     return count;
+    //   }
+    //
+    //   return counter;
+    // }
+    //
+    // var doCount = makeCounter();
+    // console.log(doCount());
+    // console.log(doCount());
+    // console.log(doCount());
+
+
+    // 1.
+    function makePassword(password) {
+      return function(passwordGuess) {
+        return (passwordGuess === password);
+      };
+    }
+
+    var pass = makePassword('banana');
+    console.log(pass('banana'));
+    console.log(pass('melon'));
+
+
+
+    // 2.
+    function multN(n) {
+      return function(x) {
+        return n * x;
+      }
+    }
+
+    var mult = multN(10);
+
+    var result_1 = mult(2);
+    var result_2 = mult(3);
+    console.log(result_1);
+    console.log(result_2);
+
+
+    // 3.
+    function makeCounter() {
+      var count = 0;
+
+      // var counter = {
+      //   increment: function() {
+      //     count++;
+      //     return count;
+      //   }
+      // }
+
+      return {
+        increment: function() {
+          count++;
+          return count;
+        }
+      }
+    }
+
+    var myCounter = makeCounter();
+    console.log(myCounter.increment());
+    console.log(myCounter.increment());
+    console.log(myCounter.increment());
+    console.log(myCounter.increment());
+
+
+    function setTimer(doneMessage, n) {
+      setTimeout(function() {
+        alert(doneMessage);
+      }, n);
+
+      doneMessage = 'Ouch!';
+    }
+
+    setTimer('Cookies are done!', 1000);
+
+  </script>
+
+</body>
+</html>
