@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Модуль</title>
+</head>
+<body>
+
+<!-- 	<a href="">link</a>
+	<a href="">link</a>
+	<a href="">link</a>
+	<a href="">link</a>
+	<a href="">link</a>
+ -->
+
+	<script>
+		
+		// var colorModule = (function() {
+
+		// 	var colorArray = [];
+
+		// 	return {
+
+		// 		colorText: 'Введите свой цвет',
+
+		// 		addColor: function(value) {
+		// 			colorArray.push(value);
+		// 		},
+
+		// 		showColors: function() {
+		// 			var res = colorArray.join(', ');
+
+		// 			return res;
+		// 		}
+		// 	}
+
+
+		// })();
+
+
+		var shopCar = (function() {
+
+			var carrArray = [];
+
+			return {
+
+				addCar: function(brand, age, color) {
+					carrArray.push(
+						{brand: brand, age: age, color: color}
+					);
+				},
+
+				countCar: function() {
+					return carrArray.length;
+				},
+
+				showCar: function(index) {
+					var car = 'Brand: ' + carrArray[index].brand + ', age: ' + carrArray[index].age + ', color: ' + carrArray[index].color;
+					return car;
+				}
+			}
+
+		})();
+
+
+
+
+		//---------------------------
+		// объявление функциии
+		// function foo(val) {/* some code*/};
+		// foo('hi');
+
+		// // функциональное выражение
+		// var foo = function(val) {/* some code */};
+		// foo('hi');
+
+
+		// // немедленно вызываемая функуция
+		// (function(a, b, c) {
+
+		// 	console.log(a + b + c);
+
+		// })('Sum: ', 4, 6);
+
+		// var el = document.querySelectorAll('a');
+
+		// for(var i = 0; i < el.length; i++) {
+		// 	(function(index) {
+
+		// 		el[i].addEventListener('click', function(e) {
+		// 			e.preventDefault();
+		// 			console.log('num link: ' + index);
+		// 		});
+
+		// 	})(i);
+		// }
+
+		
+
+
+
+
+	</script>
+	
+</body>
+</html>

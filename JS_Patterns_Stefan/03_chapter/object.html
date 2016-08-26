@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Object</title>
+</head>
+<body>
+
+
+	<script>
+		
+	var obj = {
+		name: 'Travis',
+
+		getName: function() {
+			console.log('My name is ' + this.name);
+		}
+	}
+
+
+	// НЕ используем при создании объекта Конструктор Object
+	// это приводит к созданию "не того" объекта
+	var test = new Object(12);
+
+	console.log(test.constructor === Number);
+
+
+
+	</script>
+	
+</body>
+</html>

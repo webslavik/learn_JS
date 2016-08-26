@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Свой конструктор</title>
+</head>
+<body>
+
+	<script>
+		
+		var Person = function(name) {
+
+			// создается пустой объект
+			// с использованием литерала
+			// var this = {};
+			// объект this совсем не пустой,
+			// а наследует свойсва и методы от протатима Person
+
+			// добавляются свойства и методы
+			this.name = name;
+			// this.say = function() {
+			// 	return 'I am ' + this.name;
+			// }
+
+			// return this;
+		}
+
+
+		// функция say() будет создаваться каждый раз
+		// при использовании конструктора с оператором new
+		// ЭТО ПЛОХО!
+
+		// записываем метод в прототим Конструктора
+		// что позволит не дублировать его при каждом
+		// использовании Конструктора
+		Person.prototype.say = function() {
+			return 'I am ' + this.name;
+		}
+
+
+		// здесь создаться say()
+		var adam = new Person('Adam');
+		// console.log(adam.say());
+
+		for(var prop in adam) {
+			if(adam.hasOwnProperty()) {
+				console.log(prop, ': ', adam[prop] );
+			}
+		}
+
+		// здесь создаться say()
+		var kevin = new Person('Kevin');
+		// console.log(adam.say());	
+		for(var prop in kevin) {
+			console.log(prop, ': ', kevin[prop] );
+		}
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>

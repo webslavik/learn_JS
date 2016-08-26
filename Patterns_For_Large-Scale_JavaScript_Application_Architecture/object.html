@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Объект</title>
+</head>
+<body>
+
+
+	<script>
+		
+		var simpleModule = {
+
+			moduleProp: 'this is property',
+
+			human: {
+				name: 'Eric',
+				age: 10
+			},
+
+			showInfoHuman: function() {
+				console.log('My name is ' + this.human.name + ' and I\'m ' + this.human.age + ' year old.')
+			},
+
+			addNewHuman: function(humanInfo) {
+				this.human = humanInfo;
+			}
+
+
+		};
+
+
+	</script>
+	
+</body>
+</html>

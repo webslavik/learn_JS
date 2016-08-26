@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Глава 2</title>
+</head>
+<body>
+
+
+
+	<script>
+
+
+
+		function foo() {
+
+			// FOR
+			//------------------------------------------------
+			var array = [];
+			for(var i = 0, max = array.length; i < max; i += 1) {
+			}
+
+
+			//FOR IN
+			//------------------------------------------------
+			var man = {
+				hands: 2,
+				legs: 2,
+				heads: 1
+			};
+
+			if (typeof Object.prototype.clone === 'undefined') {
+				Object.prototype.clone = function () {};
+			};
+
+			// плохо. Выводится свойство из прототипа
+			for(var i in man) {
+				console.log(i, ' : ', man[i]);
+			}
+
+			// хорошо. Свойства из протатипа не выводятся
+			for(var i in man) {
+				if(man.hasOwnProperty(i)) {
+					console.log(i, ' : ', man[i]);
+				}
+			}
+
+		}
+		// foo();
+
+
+		// Преобразование типов
+		//-----------------------------------------------
+		var zero = 0;
+		if(zero === false) {
+			console.log('zero');
+		}
+
+		// Преобразование строки в число parseInt()
+		//-----------------------------------------------
+		var month = +'06',
+				year  = '09';
+
+		// month = parseInt(month, 10);
+		year = parseInt(year, 10);
+
+		console.log(month);
+		console.log(year);
+
+	</script>
+	
+</body>
+</html>

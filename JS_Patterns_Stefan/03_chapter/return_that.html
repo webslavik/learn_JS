@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<script>
+
+		// Вариант при котором возвращем другой объект, а не this.
+		// В таком случаем если забудет написать оператор "new",
+		// то ничего не сломается.
+		// Минус в том, что мы не можем пользоваться прототипом.
+		
+		function Test(name) {
+
+			var that = {};
+			that.name = name;
+			that.show = function() {
+				return this.name;
+			}
+
+			return that;
+
+		}
+
+
+		var a = Test('Eric');
+
+		console.log(a.show());
+
+
+
+
+	</script>
+	
+</body>
+</html>
